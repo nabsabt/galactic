@@ -39,12 +39,22 @@ entity Spacefarers {
   {Value: spacesuitColor},
   {Value: department_ID},
   {Value: position_ID}
-]; */
+];
+ */
+annotate Galactic.Spacefarers with @odata.draft.enabled;
+annotate Galactic.Spacefarers with @fiori.draft.enabled;
+
 
 annotate Galactic.Spacefarers with @UI: {
   LineItem       : [
-    {Value: name},
-    {Value: originPlanet},
+    {
+      Value: name,
+      Label: 'Name'
+    },
+    {
+      Value: originPlanet,
+      Label: 'Origin Planet'
+    },
     {Value: stardustCollection},
     {Value: wormholeSkill},
     {Value: spacesuitColor},

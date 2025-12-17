@@ -1,12 +1,15 @@
 //npm install nodemailer->
 //const nodemailer = require("nodemailer");
 
+
 module.exports = srv => {
 
   /**
    * CREATE NEW Spacefarer
    */
   srv.before('CREATE', 'Spacefarers', req => {
+    console.log("Creating new: ", req.user, req.user.roles)
+    console.log("new user: ", req.data);
     const data = req.data;
 
     if (data.stardustCollection == null || data.stardustCollection < 0) {

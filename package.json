@@ -20,5 +20,70 @@
   ],
   "sapux": [
     "app/galactic-spacefarers"
-  ]
+  ],
+  "cds": {
+    "requires": {
+      "auth": {
+        "kind": "mocked",
+        "users": {
+          "Hansolo": {
+            "password": "p1",
+            "roles": [
+              "admin",
+              "user"
+            ],
+            "attr": {
+              "originPlanet": "Planet Y"
+            }
+          },
+          "Luke": {
+            "password": "p1",
+            "roles": [
+              "user"
+            ],
+            "attr": {
+              "originPlanet": "Planet Y"
+            }
+          },
+          "Palpatine": {
+            "password": "p1",
+            "roles": [
+              "user"
+            ],
+            "attr": {
+              "originPlanet": "Planet Y"
+            }
+          },
+          "Yoda": {
+            "password": "p1",
+            "roles": [
+              "user"
+            ],
+            "attr": {
+              "originPlanet": "Planet X"
+            }
+          },
+          "Anakin": {
+            "password": "p1",
+            "roles": [
+              "user"
+            ],
+            "attr": {
+              "originPlanet": "Planet X"
+            }
+          },
+          "Feri": {
+            "password": "p1",
+            "roles": [
+              "user",
+              "admin"
+            ],
+            "attr": {
+              "originPlanet": "Planet X"
+            }
+          }
+        }
+      }
+    }
+  }
 }

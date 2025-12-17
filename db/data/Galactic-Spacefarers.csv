@@ -1,3 +1,7 @@
     ID,name,originPlanet,stardustCollection,wormholeSkill,spacesuitColor,department_ID,position_ID
-    664edd61-9cb1-4d9b-835a-76d4c4f8c1f9,"Han Solo","Bespin",4,6,"brown",12,5
-    d01a88a4-bb14-4386-8b67-7339b3bc5f3c,"Luke Szkájvóker","Tatooine",3,4,"white",12,5
+    664edd61-9cb1-4d9b-835a-76d4c4f8c1f9,"Hansolo","Planet Y",4,6,"brown",12,5
+    d01a88a4-bb14-4386-8b67-7339b3bc5f3c,"Luke","Planet Y",3,4,"white",12,5
+    d01a77a5-bb15-4836-8b67-7339b3bc5f3c,"Palpatine","Planet Y",1,8,"red",12,5
+    d01a77a6-bb15-4836-8b67-7339b3bc5f3c,"Yoda","Planet X",2,7,"blue",12,5
+    d01a77a7-bb15-4836-8b67-7339b3bc5f3c,"Anakin","Planet X",6,1,"green",12,5
+    d01a77a8-bb15-4836-8b67-7339b3bc5f3c,"Feri","Planet X",7,7,"yellow",12,5

@@ -7,7 +7,7 @@
 |**Generation Platform**<br>Visual Studio Code|
 |**Template Used**<br>List Report Page V4|
 |**Service Type**<br>Local CAP|
-|**Service URL**<br>http://localhost:4004/odata/v4/gsas/|
+|**Service URL**<br>http://localhost:4004/odata/v4/service-definition/|
 |**Module Name**<br>galactic-spacefarers|
 |**Application Title**<br>Welcome to Galactic|
 |**Namespace**<br>|
