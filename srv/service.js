@@ -5,7 +5,7 @@
 module.exports = srv => {
 
   /**
-   * CREATE NEW Spacefarer
+   * BEFORE CREATE NEW Spacefarer
    */
   srv.before('CREATE', 'Spacefarers', req => {
     console.log("Creating new: ", req.user, req.user.roles)
@@ -25,20 +25,27 @@ module.exports = srv => {
     }
   });
 
-  // AFTER CREATE – cosmic email (mocked)
+  /**
+   * AFTER CREATE Spacefarer
+   */
   srv.after('CREATE', 'Spacefarers', data => {
     console.log(
       `🚀 Cosmic email sent to ${data.name} from ${data.originPlanet}`
     );
   });
 
+  /**
+   * UPDATE Spacefarer
+   */
   srv.after('UPDATE', 'Spacefarers', data => {
     console.log(
      "UPDATE történt: ", data
     );
   });
 
-  // Planet-based access restriction (Planet X vs Y)
+  /**
+   * READ Spacefarers - restrict to user's originPlanet
+   */
   srv.before('READ', 'Spacefarers', req => {
     const userPlanet = req.user?.attr?.originPlanet;
     if (userPlanet) {

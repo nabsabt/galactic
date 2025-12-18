@@ -21,22 +21,14 @@ entity Spacefarers {
       wormholeSkill      : Integer;
       spacesuitColor     : String;
 
-      department         : Association to Departments
-                             on department.ID = department_ID;
-      department_ID      : UUID;
+      department         : Association to Departments;
 
-      position           : Association to Positions
-                             on position.ID = position_ID;
-      position_ID        : UUID;
+      position           : Association to Positions;
 }
 
 /**
- * ANNOTATIONS FOR FIORI GUI
+ * ANNOTATIONS FOR FIORI GUI (can be set in Page Map)
  */
-/* annotate Galactic.Spacefarers with @odata.draft.enabled;
-annotate Galactic.Departments with @odata.draft.enabled;
-annotate Galactic.Positions with @odata.draft.enabled;
-annotate Galactic.Spacefarers with @fiori.draft.enabled; */
 
 /**
  * Columns in Object List
@@ -64,13 +56,16 @@ annotate Galactic.Spacefarers with @UI.HeaderInfo: {
   TypeName      : 'Spacefarer',
   TypeNamePlural: 'Spacefarers',
   Title         : {Value: name},
-//Description   : {},
 };
 
 /**
  *Field groups showing data ob the selected object
  */
 annotate Galactic.Spacefarers with @UI.FieldGroup #Details: {Data: [
+  {
+    Value: name,
+    Label: 'Name of the Spacefarer'
+  },
   {
     Value: stardustCollection,
     Label: 'Stardusts Collected'
@@ -87,23 +82,24 @@ annotate Galactic.Spacefarers with @UI.FieldGroup #Details: {Data: [
     Value: spacesuitColor,
     Label: 'Spacesuit Color'
   },
-  {
-    Value                  : department.name,
-    Label                  : 'Department',
-    ![@Common.FieldControl]: #ReadOnly,
-  },
-  {
-    Value                  : position.name,
-    Label                  : 'Position',
-    ![@Common.FieldControl]: #ReadOnly,
-  }
+
+/* {
+ Value                  : department.name,
+ Label                  : 'Department',
+ ![@Common.FieldControl]: #ReadOnly,
+},
+{
+ Value                  : position.name,
+ Label                  : 'Position',
+ ![@Common.FieldControl]: #ReadOnly,
+} */
 
 ]};
 
 
 /**
- * describes the structure of the Object Page
- */
+* describes the structure of the Object Page
+*/
 annotate Galactic.Spacefarers with @UI.Facets: [{
   $Type : 'UI.ReferenceFacet',
   Label : 'Details of the Spacefarer',

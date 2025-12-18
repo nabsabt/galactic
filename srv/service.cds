@@ -26,9 +26,10 @@ service gsas @(requires: 'user') {
         }
     ])                 as projection on db.Spacefarers;
 
-    //@odata.draft.enabled
+    @odata.draft.enabled
     entity Departments as projection on db.Departments;
 
-    //@odata.draft.enabled
+
+    @odata.draft.enabled
     entity Positions   as projection on db.Positions;
 }
