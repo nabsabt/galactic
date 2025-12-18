@@ -7,7 +7,7 @@ using {Galactic as db} from '../db/schema/schema';
  */
 
 service gsas @(requires: 'user') {
-    //@odata.draft.enabled
+    @odata.draft.enabled
     entity Spacefarers @(restrict: [
         {
             grant: ['READ'],

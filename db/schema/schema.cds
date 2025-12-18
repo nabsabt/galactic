@@ -33,8 +33,10 @@ entity Spacefarers {
 /**
  * ANNOTATIONS FOR FIORI GUI
  */
-annotate Galactic.Spacefarers with @odata.draft.enabled;
-annotate Galactic.Spacefarers with @fiori.draft.enabled;
+/* annotate Galactic.Spacefarers with @odata.draft.enabled;
+annotate Galactic.Departments with @odata.draft.enabled;
+annotate Galactic.Positions with @odata.draft.enabled;
+annotate Galactic.Spacefarers with @fiori.draft.enabled; */
 
 /**
  * Columns in Object List
@@ -62,7 +64,7 @@ annotate Galactic.Spacefarers with @UI.HeaderInfo: {
   TypeName      : 'Spacefarer',
   TypeNamePlural: 'Spacefarers',
   Title         : {Value: name},
-  Description   : {Value: originPlanet}
+//Description   : {},
 };
 
 /**
@@ -74,14 +76,30 @@ annotate Galactic.Spacefarers with @UI.FieldGroup #Details: {Data: [
     Label: 'Stardusts Collected'
   },
   {
+    Value: originPlanet,
+    Label: 'Birth of Planet'
+  },
+  {
     Value: wormholeSkill,
     Label: 'Wormhole Skill Level'
   },
   {
     Value: spacesuitColor,
     Label: 'Spacesuit Color'
+  },
+  {
+    Value                  : department.name,
+    Label                  : 'Department',
+    ![@Common.FieldControl]: #ReadOnly,
+  },
+  {
+    Value                  : position.name,
+    Label                  : 'Position',
+    ![@Common.FieldControl]: #ReadOnly,
   }
+
 ]};
+
 
 /**
  * describes the structure of the Object Page

@@ -32,6 +32,12 @@ module.exports = srv => {
     );
   });
 
+  srv.after('UPDATE', 'Spacefarers', data => {
+    console.log(
+     "UPDATE történt: ", data
+    );
+  });
+
   // Planet-based access restriction (Planet X vs Y)
   srv.before('READ', 'Spacefarers', req => {
     const userPlanet = req.user?.attr?.originPlanet;
