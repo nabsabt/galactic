@@ -30,65 +30,76 @@ entity Spacefarers {
       position_ID        : UUID;
 }
 
-/* annotate Spacefarers with @UI.LineItem: [
-  {Value: ID},
-  {Value: name},
-  {Value: originPlanet},
-  {Value: stardustCollection},
-  {Value: wormholeSkill},
-  {Value: spacesuitColor},
-  {Value: department_ID},
-  {Value: position_ID}
-];
+/**
+ * ANNOTATIONS FOR FIORI GUI
  */
 annotate Galactic.Spacefarers with @odata.draft.enabled;
 annotate Galactic.Spacefarers with @fiori.draft.enabled;
 
+/**
+ * Columns in Object List
+ * (Label is the column title)
+ */
+annotate Galactic.Spacefarers with @UI.LineItem: [
+  {
+    Value: name,
+    Label: 'Name of the Spacefarer'
+  },
+  {
+    Value: stardustCollection,
+    Label: 'Number of Stardusts'
+  },
+  {
+    Value: spacesuitColor,
+    Label: 'Suit color'
+  }
+];
 
-annotate Galactic.Spacefarers with @UI: {
-  LineItem       : [
-    {
-      Value: name,
-      Label: 'Name'
-    },
-    {
-      Value: originPlanet,
-      Label: 'Origin Planet'
-    },
-    {Value: stardustCollection},
-    {Value: wormholeSkill},
-    {Value: spacesuitColor},
-    {Value: department.name},
-    {Value: position.title}
-  ],
-  SelectionFields: [
-    originPlanet,
-    spacesuitColor,
-    department_ID,
-    position_ID
-  ],
-  Identification : [
-    {Value: name},
-    {Value: originPlanet},
-    {Value: department.name},
-    {Value: position.title},
-    {Value: stardustCollection},
-    {Value: wormholeSkill},
-    {Value: spacesuitColor}
-  ],
-  Facets         : [{
-    $Type : 'UI.ReferenceFacet',
-    Label : 'Details',
-    Target: '@UI.Identification'
-  }]
+/**
+ * Object Page Header info
+ */
+annotate Galactic.Spacefarers with @UI.HeaderInfo: {
+  TypeName      : 'Spacefarer',
+  TypeNamePlural: 'Spacefarers',
+  Title         : {Value: name},
+  Description   : {Value: originPlanet}
 };
 
+/**
+ *Field groups showing data ob the selected object
+ */
+annotate Galactic.Spacefarers with @UI.FieldGroup #Details: {Data: [
+  {
+    Value: stardustCollection,
+    Label: 'Stardusts Collected'
+  },
+  {
+    Value: wormholeSkill,
+    Label: 'Wormhole Skill Level'
+  },
+  {
+    Value: spacesuitColor,
+    Label: 'Spacesuit Color'
+  }
+]};
+
+/**
+ * describes the structure of the Object Page
+ */
+annotate Galactic.Spacefarers with @UI.Facets: [{
+  $Type : 'UI.ReferenceFacet',
+  Label : 'Details of the Spacefarer',
+  Target: '@UI.FieldGroup#Details'
+}];
+
+
+/////////
 annotate Positions with @UI.LineItem: [
-  {Value: position_ID},
-  {Value: title}
+  {Value: ID},
+  {Value: name}
 ];
 
 annotate Departments with @UI.LineItem: [
-  {Value: department_ID},
+  {Value: ID},
   {Value: name}
 ];
