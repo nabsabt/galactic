@@ -26,60 +26,45 @@
       "auth": {
         "kind": "mocked",
         "users": {
-          "Hansolo": {
-            "password": "p1",
-            "roles": [
-              "admin",
-              "user"
-            ],
-            "attr": {
-              "originPlanet": "Planet Y"
-            }
-          },
-          "Luke": {
-            "password": "p1",
-            "roles": [
-              "user"
-            ],
-            "attr": {
-              "originPlanet": "Planet Y"
-            }
-          },
-          "Palpatine": {
-            "password": "p1",
-            "roles": [
-              "user"
-            ],
-            "attr": {
-              "originPlanet": "Planet Y"
-            }
-          },
-          "Yoda": {
-            "password": "p1",
-            "roles": [
-              "user"
-            ],
-            "attr": {
-              "originPlanet": "Planet X"
-            }
-          },
-          "Anakin": {
-            "password": "p1",
-            "roles": [
-              "user"
-            ],
-            "attr": {
-              "originPlanet": "Planet X"
-            }
-          },
-          "Feri": {
-            "password": "p1",
+          "mockadmin": {
+            "password": "p0",
             "roles": [
               "user",
               "admin"
             ],
             "attr": {
-              "originPlanet": "Planet X"
+              "originPlanetName": "Planet-Y",
+              "originPlanetID": "52611125-5ffd-438b-a289-60bbf9e61315"
+            }
+          },
+          "mock1": {
+            "password": "p1",
+            "roles": [
+              "user"
+            ],
+            "attr": {
+              "originPlanetName": "Planet-Y",
+              "originPlanetID": "52611125-5ffd-438b-a289-60bbf9e61315"
+            }
+          },
+          "mock2": {
+            "password": "p2",
+            "roles": [
+              "user"
+            ],
+            "attr": {
+              "originPlanetName": "Planet-X",
+              "originPlanetID": "2114d7a7-62fd-4eeb-8c70-4416a57dd846"
+            }
+          },
+          "mock3": {
+            "password": "p3",
+            "roles": [
+              "user"
+            ],
+            "attr": {
+              "originPlanetName": "Planet-Z",
+              "originPlanetID": "7994d7a7-62fd-4ffb-8c70-4416a57dd846"
             }
           }
         }
