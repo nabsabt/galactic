@@ -13,6 +13,11 @@ entity Positions {
       name : String;
 }
 
+entity Planets {
+  key ID   : UUID;
+      name : String;
+}
+
 entity Spacefarers {
   key ID                 : UUID;
       name               : String;
@@ -24,6 +29,8 @@ entity Spacefarers {
       department         : Association to Departments;
 
       position           : Association to Positions;
+
+      planet             : Association to Planets;
 }
 
 /**
@@ -70,10 +77,10 @@ annotate Galactic.Spacefarers with @UI.FieldGroup #Details: {Data: [
     Value: stardustCollection,
     Label: 'Stardusts Collected'
   },
-  {
-    Value: originPlanet,
-    Label: 'Birth of Planet'
-  },
+  /*  {
+     Value: originPlanet,
+     Label: 'Birth of Planet'
+   }, */
   {
     Value: wormholeSkill,
     Label: 'Wormhole Skill Level'
@@ -114,6 +121,11 @@ annotate Positions with @UI.LineItem: [
 ];
 
 annotate Departments with @UI.LineItem: [
+  {Value: ID},
+  {Value: name}
+];
+
+annotate Planets with @UI.LineItem: [
   {Value: ID},
   {Value: name}
 ];

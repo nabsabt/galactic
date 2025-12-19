@@ -32,4 +32,7 @@ service gsas @(requires: 'user') {
 
     @odata.draft.enabled
     entity Positions   as projection on db.Positions;
+
+    @odata.draft.enabled
+    entity Planets     as projection on db.Planets;
 }
