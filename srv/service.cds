@@ -12,7 +12,7 @@ service gsas @(requires: 'user') {
         {
             grant: [
                 'READ',
-                'WRITE'
+                'UPDATE'
             ],
             to   : [
                 'admin',

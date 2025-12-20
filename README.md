@@ -1,25 +1,13 @@
 # Getting Started
 
-Welcome to your new project.
+Welcome to Galactic Spacefarer Adventure.
 
-It contains these folders and files, following our recommended project layout:
+To see the magic, simply run 'cds watch' in the terminal.
 
-File or Folder | Purpose
----------|----------
-`app/` | content for UI frontends goes here
-`db/` | your domain models and data go here
-`srv/` | your service models and code go here
-`package.json` | project metadata and configuration
-`readme.md` | this getting started guide
+For test authentication, mocked users are defined in the package.json. mockadmin has priviliges for all CRUD operations, other mocked users can only READ & UPDATE (with some restrictions, as per client requested). Now the SQLite data is stored in memory. When in PROD, NEVER store any sensitive data (like credentials) in package.json (or any other, non-git-ignored file). Use Vault/.env instead!
 
-
-## Next Steps
-
-- Open a new terminal and run `cds watch`
-- (in VS Code simply choose _**Terminal** > Run Task > cds watch_)
-- Start adding content, for example, a [db/schema.cds](db/schema.cds).
-
-
-## Learn More
+Whenever a new Spacefarer is created, an e-mail is being sent to him/her.
+!!!IMPORTANT!!!
+The transport host is ethereal, the e-mail will not be actually sent to the addressee. For PROD, an actual user/pw is needed to be requested with a valid API key.
 
 Learn more at https://cap.cloud.sap/docs/get-started/.

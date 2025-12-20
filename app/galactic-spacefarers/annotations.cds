@@ -48,6 +48,11 @@ annotate service.Spacefarers with @(UI.LineItem: [
     }
 ]);
 
+annotate service.Spacefarers with @(UI.HeaderInfo: {
+    TypeName      : 'Spacefarer',
+    TypeNamePlural: 'Spacefarers',
+    Title         : {Value: name},
+});
 
 annotate service.Spacefarers with @(UI.SelectionFields: [
     name,
@@ -67,9 +72,10 @@ annotate service.Spacefarers with @(UI.FieldGroup #Details: {Data: [
         Label: 'Wormhole Skill Level',
     },
     {
-        $Type: 'UI.DataField',
-        Value: spacesuitColor,
-        Label: 'Spacesuit Color',
+        $Type   : 'UI.DataField',
+        Value   : spacesuitColor,
+        Label   : 'Spacesuit Color',
+        required: false,
     },
     {
         $Type: 'UI.DataField',
@@ -87,9 +93,10 @@ annotate service.Spacefarers with @(UI.FieldGroup #Details: {Data: [
         Label: '{i18n>Position}',
     },
     {
-        $Type: 'UI.DataField',
-        Value: name,
-        Label: '{i18n>NameOfTheSpacefarer}',
+        $Type   : 'UI.DataField',
+        Value   : name,
+        Label   : '{i18n>NameOfTheSpacefarer}',
+        required: true,
     },
     {
         $Type: 'UI.DataField',
@@ -97,6 +104,17 @@ annotate service.Spacefarers with @(UI.FieldGroup #Details: {Data: [
         Label: 'Planet',
     },
 ], });
+
+annotate service.Spacefarers with @(UI.Facets: [{
+    $Type : 'UI.ReferenceFacet',
+    Label : 'Details of the Spacefarer',
+    Target: '@UI.FieldGroup#Details'
+}]);
+
+annotate service.Spacefarers with {
+    email @Common.FieldControl: #Mandatory;
+    name  @Common.FieldControl: #Mandatory;
+};
 
 annotate service.Departments with {
     ID @(
