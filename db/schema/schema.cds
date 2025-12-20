@@ -21,10 +21,11 @@ entity Planets {
 entity Spacefarers {
   key ID                 : UUID;
       name               : String;
-      originPlanet       : String;
+      //originPlanet       : String;
       stardustCollection : Integer;
       wormholeSkill      : Integer;
       spacesuitColor     : String;
+      email              : String;
 
       department         : Association to Departments;
 
@@ -88,6 +89,10 @@ annotate Galactic.Spacefarers with @UI.FieldGroup #Details: {Data: [
   {
     Value: spacesuitColor,
     Label: 'Spacesuit Color'
+  },
+  {
+    Value: email,
+    Label: 'Email Address'
   },
 
 /* {

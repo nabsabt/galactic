@@ -51,6 +51,11 @@ annotate service.Spacefarers with @(UI.FieldGroup #Details: {Data: [
     },
     {
         $Type: 'UI.DataField',
+        Value: email,
+        Label: 'Email Address',
+    },
+    {
+        $Type: 'UI.DataField',
         Value: department_ID,
         Label: '{i18n>Department}',
     },
@@ -65,9 +70,9 @@ annotate service.Spacefarers with @(UI.FieldGroup #Details: {Data: [
         Label: '{i18n>NameOfTheSpacefarer}',
     },
     {
-        $Type : 'UI.DataField',
-        Value : planet_ID,
-        Label : 'Planet',
+        $Type: 'UI.DataField',
+        Value: planet_ID,
+        Label: 'Planet',
     },
 ], });
 
@@ -88,21 +93,19 @@ annotate service.Positions with {
 annotate service.Spacefarers with {
     originPlanet @Common.ExternalID: planet.name
 };
+
 annotate service.Spacefarers with {
     planet @(
-        Common.ExternalID : planet.name,
-        Common.ValueList : {
-            $Type : 'Common.ValueListType',
-            CollectionPath : 'Planets',
-            Parameters : [
-                {
-                    $Type : 'Common.ValueListParameterInOut',
-                    LocalDataProperty : planet_ID,
-                    ValueListProperty : 'ID',
-                },
-            ],
+        Common.ExternalID              : planet.name,
+        Common.ValueList               : {
+            $Type         : 'Common.ValueListType',
+            CollectionPath: 'Planets',
+            Parameters    : [{
+                $Type            : 'Common.ValueListParameterInOut',
+                LocalDataProperty: planet_ID,
+                ValueListProperty: 'ID',
+            }, ],
         },
-        Common.ValueListWithFixedValues : true,
+        Common.ValueListWithFixedValues: true,
     )
 };
-

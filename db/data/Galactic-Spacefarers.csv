@@ -1,7 +1,7 @@
-    ID,name,planet_ID,stardustCollection,wormholeSkill,spacesuitColor,department_ID,position_ID
-    664edd61-9cb1-4d9b-835a-76d4c4f8c1f9,"Hansolo",52611125-5ffd-438b-a289-60bbf9e61315,4,6,"brown",63d6df65-9775-4a69-b49a-789886dc19bf,52669125-5ffd-438b-a289-60bbf9e61315
-    d01a88a4-bb14-4386-8b67-7339b3bc5f3c,"Luke",52611125-5ffd-438b-a289-60bbf9e61315,3,4,"white",63d6df65-9775-4a69-b49a-789886dc19bf,52669125-5ffd-438b-a289-60bbf9e61315
-    d01a77a5-bb15-4836-8b67-7339b3bc5f3c,"Palpatine",52611125-5ffd-438b-a289-60bbf9e61315,1,8,"red",63d6df55-9775-4a69-b49a-789886dc19bf,7814d7a7-62fd-4eeb-8c70-4416a57dd846
-    d01a77a6-bb15-4836-8b67-7339b3bc5f3c,"Yoda",2114d7a7-62fd-4eeb-8c70-4416a57dd846,2,7,"blue",63d6df65-9775-4a69-b49a-789886dc19bf,52669125-5ffd-438b-a289-60bbf9e61315
-    d01a77a7-bb15-4836-8b67-7339b3bc5f3c,"Anakin",2114d7a7-62fd-4eeb-8c70-4416a57dd846,6,1,"green",63d6df55-9775-4a69-b49a-789886dc19bf,7814d7a7-62fd-4eeb-8c70-4416a57dd846
-    d01a77a8-bb15-4836-8b67-7339b3bc5f3c,"Feri",7994d7a7-62fd-4ffb-8c70-4416a57dd846,7,7,"yellow",63d6df55-9775-4a69-b49a-789886dc19bf,52669125-5ffd-438b-a289-60bbf9e61315
+    ID,name,planet_ID,stardustCollection,wormholeSkill,spacesuitColor,email,department_ID,position_ID
+    664edd61-9cb1-4d9b-835a-76d4c4f8c1f9,"Hansolo",52611125-5ffd-438b-a289-60bbf9e61315,4,6,"brown","nabsabt@gmail.com",63d6df65-9775-4a69-b49a-789886dc19bf,52669125-5ffd-438b-a289-60bbf9e61315
+    d01a88a4-bb14-4386-8b67-7339b3bc5f3c,"Luke",52611125-5ffd-438b-a289-60bbf9e61315,3,4,"white","nabsabt@gmail.com",63d6df65-9775-4a69-b49a-789886dc19bf,52669125-5ffd-438b-a289-60bbf9e61315
+    d01a77a5-bb15-4836-8b67-7339b3bc5f3c,"Palpatine",52611125-5ffd-438b-a289-60bbf9e61315,1,8,"red","nabsabt@gmail.com",63d6df55-9775-4a69-b49a-789886dc19bf,7814d7a7-62fd-4eeb-8c70-4416a57dd846
+    d01a77a6-bb15-4836-8b67-7339b3bc5f3c,"Yoda",2114d7a7-62fd-4eeb-8c70-4416a57dd846,2,7,"blue","nabsabt@gmail.com",63d6df65-9775-4a69-b49a-789886dc19bf,52669125-5ffd-438b-a289-60bbf9e61315
+    d01a77a7-bb15-4836-8b67-7339b3bc5f3c,"Anakin",2114d7a7-62fd-4eeb-8c70-4416a57dd846,6,1,"green","nabsabt@gmail.com",63d6df55-9775-4a69-b49a-789886dc19bf,7814d7a7-62fd-4eeb-8c70-4416a57dd846
+    d01a77a8-bb15-4836-8b67-7339b3bc5f3c,"Feri",7994d7a7-62fd-4ffb-8c70-4416a57dd846,7,7,"yellow","nabsabt@gmail.com",63d6df55-9775-4a69-b49a-789886dc19bf,52669125-5ffd-438b-a289-60bbf9e61315

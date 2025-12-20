@@ -1,7 +1,30 @@
-//npm install nodemailer->
-//const nodemailer = require("nodemailer");
+import nodemailer from "nodemailer";
+import { mailBodyServer } from "../mail/mailService.js";
+let transportPromise;
 
-module.exports = (srv) => {
+/**
+ * Creates a nodemailer account (if not yet created).
+ * NEVER use testAccount in production!!!
+ * @returns created nodemailer transport
+ */
+async function getTransport() {
+  if (!transportPromise) {
+    transportPromise = nodemailer.createTestAccount().then((acc) =>
+      nodemailer.createTransport({
+        host: "smtp.ethereal.email",
+        port: 587,
+        secure: false,
+        auth: {
+          user: acc.user,
+          pass: acc.pass,
+        },
+      })
+    );
+  }
+  return transportPromise;
+}
+
+export default (srv) => {
   /**
    * BEFORE CREATE NEW Spacefarer
    */
@@ -36,25 +59,28 @@ module.exports = (srv) => {
     }
   });
 
-
-   /**
+  /**
    * BEFROE CREATE Spacefarer
    */
   srv.before("CREATE", "Spacefarers", (data) => {
-    console.log(
-      "creating new spacefarer",
-    );
+    console.log("creating new spacefarer");
   });
-
-
 
   /**
    * AFTER CREATE Spacefarer
    */
-  srv.after("CREATE", "Spacefarers", (data) => {
-    console.log(
-      "mail sending"
-    );
+  srv.after("CREATE", "Spacefarers", async (data) => {
+    console.log("mail sending to: ", data);
+    const transport = await getTransport();
+
+    const mail = await transport.sendMail({
+      from: "noreply.gsas@galactic.com",
+      to: data.email,
+      subject: "Welcome to the Galactic Spacefarer Adventure!",
+      html: mailBodyServer(data.name),
+    });
+
+    console.log("Message sent: ", nodemailer.getTestMessageUrl(mail));
   });
 
   /**
