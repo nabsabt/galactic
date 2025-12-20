@@ -78,7 +78,7 @@ module.exports = (srv) => {
    * UPDATE Spacefarer
    */
   srv.before("UPDATE", "Spacefarers", (req) => {
-    isAdmin(req);
+    isUser(req);
   });
 
   srv.after("UPDATE", "Spacefarers", (data) => {

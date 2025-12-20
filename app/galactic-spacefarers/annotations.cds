@@ -33,6 +33,28 @@ annotate service.Spacefarers with {
     )
 };
 
+annotate service.Spacefarers with @(UI.LineItem: [
+    {
+        Value: name,
+        Label: 'Name of the Spacefarer',
+    },
+    {
+        Value: stardustCollection,
+        Label: 'Stardust',
+    },
+    {
+        Value: spacesuitColor,
+        Label: 'Spacesuit Color',
+    }
+]);
+
+
+annotate service.Spacefarers with @(UI.SelectionFields: [
+    name,
+    stardustCollection,
+    spacesuitColor,
+]);
+
 annotate service.Spacefarers with @(UI.FieldGroup #Details: {Data: [
     {
         $Type: 'UI.DataField',

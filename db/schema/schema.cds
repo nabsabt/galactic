@@ -42,20 +42,24 @@ entity Spacefarers {
  * Columns in Object List
  * (Label is the column title)
  */
-annotate Galactic.Spacefarers with @UI.LineItem: [
+/* annotate Galactic.Spacefarers with @UI.LineItem: [
   {
-    Value: name,
-    Label: 'Name of the Spacefarer'
+    Value               : name,
+    Label               : 'Name of the Spacefarer',
+    ![HTML5.CssDefaults]: {backgroundColor: 'red'}
   },
   {
-    Value: stardustCollection,
-    Label: 'Number of Stardusts'
+    Value               : stardustCollection,
+    Label               : 'Number of Stardusts',
+    ![HTML5.CssDefaults]: {width: '20px'}
   },
   {
-    Value: spacesuitColor,
-    Label: 'Suit color'
+    Value               : spacesuitColor,
+    Label               : 'Suit color',
+    ![HTML5.CssDefaults]: {width: '20px'}
   }
-];
+]; */
+
 
 /**
  * Object Page Header info

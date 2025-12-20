@@ -10,7 +10,10 @@ service gsas @(requires: 'user') {
     @odata.draft.enabled
     entity Spacefarers @(restrict: [
         {
-            grant: ['READ'],
+            grant: [
+                'READ',
+                'WRITE'
+            ],
             to   : [
                 'admin',
                 'user'
@@ -18,7 +21,6 @@ service gsas @(requires: 'user') {
         },
         {
             grant: [
-                'WRITE',
                 'CREATE',
                 'DELETE'
             ],
