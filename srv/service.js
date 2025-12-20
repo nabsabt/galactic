@@ -1,5 +1,7 @@
-import nodemailer from "nodemailer";
-import { mailBodyServer } from "../mail/mailService.js";
+const mailBodyServer = require("../mail/mailService").mailBodyServer;
+const cds = require("@sap/cds");
+const nodemailer = require("nodemailer");
+
 let transportPromise;
 
 /**
@@ -24,7 +26,7 @@ async function getTransport() {
   return transportPromise;
 }
 
-export default (srv) => {
+module.exports = (srv) => {
   /**
    * BEFORE CREATE NEW Spacefarer
    */
