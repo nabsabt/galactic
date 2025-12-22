@@ -11,7 +11,7 @@ Whenever a new Spacefarer is created, an e-mail is being sent to him/her.
 
 User profile (username/pw):
 
-ADMIN (authorized to all CRUD operations): mockadmin/p0
-1. Planet-X user: mock2/p2
-2. Planet-Y user: mock1/p1
-3. Planet-Z user: mock3/p3
+1. ADMIN (authorized to all CRUD operations): *mockadmin* / *p0*
+2. Planet-X user: *mock2* / *p2*
+3. Planet-Y user: *mock1* / *p1*
+4. Planet-Z user: *mock3* / *p3*

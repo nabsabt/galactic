@@ -25,28 +25,33 @@ async function getTransport() {
   return transportPromise;
 }
 
-module.exports = (srv) => {
+/**
+ *
+ * @param {*} input : input value of the field, needed to be validated
+ * @returns true if input is not null/greater or equal to 0/is a Number
+ */
+function isNumericInputValid(input) {
+  if (input == null || input < 0 || isNaN(input)) {
+    return false;
+  } else {
+    return true;
+  }
+}
+
+module.exports = (server) => {
   /**
    * BEFORE CREATE NEW Spacefarer
    */
-  srv.before("CREATE", "Spacefarers", (req) => {
+  server.before("CREATE", "Spacefarers", (req) => {
     const data = req.data;
     isAdmin(req);
 
-    if (
-      data.stardustCollection == null ||
-      data.stardustCollection < 0 ||
-      isNaN(data.stardustCollection)
-    ) {
+    if (!isNumericInputValid(data.stardustCollection)) {
       data.stardustCollection = 0;
     }
 
-    if (
-      data.wormholeSkill == null ||
-      data.wormholeSkill < 1 ||
-      isNaN(data.wormholeSkill)
-    ) {
-      data.wormholeSkill = 1;
+    if (!isNumericInputValid(data.wormholeSkill)) {
+      data.wormholeSkill = 0;
     }
 
     if (!data.spacesuitColor) {
@@ -57,7 +62,7 @@ module.exports = (srv) => {
   /**
    * AFTER CREATE Spacefarer
    */
-  srv.after("CREATE", "Spacefarers", async (data) => {
+  server.after("CREATE", "Spacefarers", async (data) => {
     const transport = await getTransport();
     const mail = await transport.sendMail({
       from: "noreply.gsas@galactic.com",
@@ -71,7 +76,7 @@ module.exports = (srv) => {
   /**
    * BEFORE READ Spacefarers
    */
-  srv.before("READ", "Spacefarers", (req) => {
+  server.before("READ", "Spacefarers", (req) => {
     isUser(req);
     if (req.user?.roles.admin) return;
 
@@ -89,14 +94,14 @@ module.exports = (srv) => {
   /**
    * BEFORE UPDATE Spacefarer
    */
-  srv.before("UPDATE", "Spacefarers", (req) => {
+  server.before("UPDATE", "Spacefarers", (req) => {
     isUser(req);
   });
 
   /**
    * BEFORE DELETE Spacefarer
    */
-  srv.before("DELETE", "Spacefarers", (req) => {
+  server.before("DELETE", "Spacefarers", (req) => {
     isAdmin(req);
   });
 };
